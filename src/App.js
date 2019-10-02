@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import Data from "./components/TodoComponents/TodoList";
+import data from "./components/TodoComponents/TodoList";
 import ToDo from "./components/TodoComponents/Todo";
 import ToDoForm from "./components/TodoComponents/TodoForm";
 
@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-        tasks: Data
+        tasks: data
     };
   }
 
@@ -45,7 +45,7 @@ class App extends React.Component {
       completed: false
     };
 
-    this.state({
+    this.setState({
       tasks: [...this.state.tasks, newItem]
     });
   };
@@ -54,9 +54,27 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
-    return (
+   return (
       <div className="App">
-        <h2>Welcome to your Todo App!</h2>
+        <div className="header">
+          <h2>Tasks</h2>
+        </div>
+
+        <div className="todo-list">
+          {this.state.tasks.map(item => (
+            <ToDo
+              key={item.id}
+              item={item}
+              onClick={e => this.toggleItem(e, item.id)}
+            />
+          ))}
+        </div>
+        <div className="btm-pge">
+          <ToDoForm addItem={this.addItem} />
+          <button className="clr-btn" onClick={this.clearTasks}>
+            Clear tasks
+          </button>
+        </div>
       </div>
     );
   }

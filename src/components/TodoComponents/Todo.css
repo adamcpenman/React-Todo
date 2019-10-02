@@ -1,0 +1,78 @@
+body {
+  background-color: #ae8799;
+  color: #5b3000;
+  font-family: "Mansalva", cursive;
+  font-family: "Underdog", cursive;
+}
+
+.App {
+  text-align: center;
+  padding: 0 60px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 2px solid #5b3000;
+  margin-bottom: 15px;
+}
+
+.todo-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #d76a03;
+  width: 50%;
+  text-align: center;
+  margin: 4px 0;
+  padding-left: 8px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.item.completed {
+  background-color: #7c6c77;
+  text-decoration: line-through;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+form > input {
+  border: none;
+  border-bottom: 1px solid #5b3000;
+  background-color: #ae8799;
+  outline: none;
+}
+
+button {
+  margin: auto 15px;
+  padding: 7px;
+  border: none;
+  background-color: #d76a03;
+  color: #5b3000;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: #5b3000;
+  opacity: 0.5;
+}
+
+.clr-btn {
+  background-color: #7c6c77;
+  color: #96acb7;
+  padding: 8px;
+  border-radius: 5px;
+}
